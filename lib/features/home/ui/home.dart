@@ -38,7 +38,15 @@ class _HomeState extends State<Home> {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Wishlist()));
         }
-      },
+    else if (state is HomeProductItemCartedActionState) {
+
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('Item Carted')));
+    } else if (state is HomeProductItemWishlistedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Item Wishlisted')));
+        }
+    },
       builder: (context,state){
         switch (state.runtimeType) {
           case HomeLoadingState:
@@ -52,7 +60,7 @@ class _HomeState extends State<Home> {
             return Scaffold(
               appBar: AppBar(
                 backgroundColor: Colors.teal,
-                title: Text('Akshit Grocery App'),
+                title: Text('Grocery App'),
                 actions: [
                   IconButton(
                       onPressed: () {
