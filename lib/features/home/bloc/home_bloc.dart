@@ -35,6 +35,7 @@ class HomeBloc extends Bloc<HomeEvent,HomeState>{
             price: e['price'],
             imageUrl: e['imageUrl']))
             .toList()));
+    /// e means every element or items
   }
 
 

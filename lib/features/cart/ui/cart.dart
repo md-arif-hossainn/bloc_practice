@@ -27,6 +27,10 @@ class _CartState extends State<Cart> {
       appBar: AppBar(
         title: Text('Cart Items'),
       ),
+
+      ///listener and builder -> blocConsumer
+      ///builder ui -> use bloc builder
+      ///listen state -> Bloc listener
       body: BlocConsumer<CartBloc, CartState>(
         bloc: cartBloc,
         listener: (context, state) {
